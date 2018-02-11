@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name="Label">
+        <item name="android:fontFamily">Lato</item>
+        <item name="android:textColor">#FF9D9D9D</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

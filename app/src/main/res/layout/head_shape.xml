@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape	android:layout_height="18.01dp" android:layout_width="18dp" android:shape="rectangle"	xmlns:android="http://schemas.android.com/apk/res/android"><stroke		android:color="#FF4D4D4D"		android:width="1dp" /></shape>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="id" type="java.lang.String"/>
+    </data>
+    <EditText android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:background="@layout/form_input_edit_text_shape"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" />
+</layout>
