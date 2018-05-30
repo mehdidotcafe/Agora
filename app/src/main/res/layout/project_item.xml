@@ -1,57 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="156dp"
-    android:layout_height="200dp"
-
-    android:background="@layout/project_item_shape"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="top"
     android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/border_black_background"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:contentDescription="project image"
-            app:srcCompat="@drawable/rectangle2" />
+            <ImageView
+                android:id="@+id/project_image"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/rectangle2"
+                android:contentDescription="project image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-        <RelativeLayout
-            android:layout_width="35dp"
-            android:layout_height="18dp"
-            android:background="@layout/project_item_count_shape"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+        </android.support.constraint.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/project_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="16dp"
+                        android:id="@+id/project_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Peoples" />
+                </LinearLayout>
 
-                <View
-                    android:layout_width="16dp"
-                    android:layout_height="match_parent"
-                    android:background="@layout/head_shape" />
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="16dp"
+                        android:id="@+id/project_delay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="125" />
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Days remaining" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:text="4 prs" />
             </LinearLayout>
-        </RelativeLayout>
-    </android.support.constraint.ConstraintLayout>
 
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/project_name"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:width="50dp"
-        android:height="17dp"
-        android:lineSpacingMultiplier="1.21"
-        android:text="BRAND" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

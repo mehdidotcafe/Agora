@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.agora.agora">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +35,20 @@
         <activity
             android:name=".ProjectListActivity"
             android:label="@string/title_activity_project_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserListActivity"
+            android:label="@string/title_activity_user_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserActivity"
+            android:label="@string/title_activity_user" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profil" />
+        <activity
+            android:name=".ProjectActivity"
+            android:label="@string/title_activity_project"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

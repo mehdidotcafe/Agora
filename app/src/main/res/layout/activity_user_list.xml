@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    tools:context=".UserListActivity">
     <android.support.v7.widget.Toolbar android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -15,17 +14,20 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         xmlns:android="http://schemas.android.com/apk/res/android" />
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/project_list"
-        android:divider="@null"
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/user_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:columnWidth="156dp"
+        android:gravity="center"
+        android:numColumns="2"
+        android:stretchMode="spacingWidthUniform"
+        android:verticalSpacing="16dp"
         app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
-    </ListView>
+    </GridView>
 
     <include
         android:id="@+id/include"

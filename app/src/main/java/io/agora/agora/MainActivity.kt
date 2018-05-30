@@ -1,34 +1,41 @@
 package io.agora.agora
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.EditText
-import io.agora.agora.Layout
+import io.agora.agora.entities.Callback
+import io.agora.agora.entities.IntentManager
+import io.agora.agora.entities.Request
+import org.json.JSONObject
 
 class MainActivity : Layout() {
     val EXTRA_MESSAGE: String = "agora.io.MESSAGE"
+    val self: MainActivity = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState, R.layout.activity_main, false)
-        login("toto", "aqwzsxedc")
+        testAutoConnection()
+    }
+
+    fun testAutoConnection() {
+
     }
 
     fun login(username: String, password: String)
     {
-        if (username == "toto" && (password == "qazwsxedc" || password == "aqwzsxedc"))
-        {
-            println(username + " se connecte");
-            val intent: Intent = Intent(this,  ProjectListActivity::class.java)
+        var obj: JSONObject = JSONObject()
 
-            startActivity(intent)
-        }
-        else
-        {
-            println(username + " se connecte pas");
-        }
+        obj.put("email", username)
+        obj.put("password", password)
+        Request.getInstance().send(this, "login", "POST", JSONObject(), obj, object: Callback() {
+            override fun success(obj: Any?) {
+                val ret: JSONObject = obj as JSONObject
+
+                Request.getInstance().addHeader("Authorization", "JWT " + ret.getString("auth_token"))
+                IntentManager.replace(self, ProjectListActivity::class.java)
+            }
+        })
     }
 
     fun getInputString(input: Int): String
@@ -40,16 +47,12 @@ class MainActivity : Layout() {
 
     fun register(view: View)
     {
-        val intent: Intent = Intent(this,  RegisterActivity::class.java)
-
-        startActivity(intent)
+        IntentManager.goTo(this, RegisterActivity::class.java)
     }
 
     fun forgotPassword(view: View)
     {
-        val intent: Intent = Intent(this,  ForgotPasswordActivity::class.java)
-
-        startActivity(intent)
+        IntentManager.goTo(this, ForgotPasswordActivity::class.java)
     }
 
     fun auth(view: View)
