@@ -122,52 +122,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:paddingLeft="32dp"
-                android:paddingRight="16dp"
-                android:text="Email" />
-
-            <TextView
-                android:id="@+id/email_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@layout/form_input_edit_text_shape"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="32dp"
-                android:paddingRight="16dp"
-                android:text="Phone" />
-
-            <TextView
-                android:id="@+id/phone_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@layout/form_input_edit_text_shape"
-                android:ems="10"
-                android:inputType="phone"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
-                android:text="+337 77 77 77 77" />
-
-
             <Button
                 android:id="@+id/ask_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="128dp"
                 android:textColor="@android:color/white"
                 android:background="@layout/form_input_edit_text_background_shape"
                 android:text="@string/contact_him" />

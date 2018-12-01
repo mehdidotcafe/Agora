@@ -38,8 +38,6 @@ class ProjectFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        println("foobar")
-        println(param1)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

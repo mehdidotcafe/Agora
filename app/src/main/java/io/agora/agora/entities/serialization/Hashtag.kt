@@ -9,7 +9,7 @@ class Hashtag(json: JSONObject) {
 
     companion object {
         fun getFromJSONArray(array: JSONArray): ArrayList<Hashtag> {
-            var ret: ArrayList<Hashtag> = ArrayList<Hashtag>()
+            var ret: ArrayList<Hashtag> = ArrayList()
 
             for (i in 0 until array.length()) {
                 ret.add(Hashtag(array.getJSONObject(i)))

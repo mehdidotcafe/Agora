@@ -29,7 +29,6 @@ class UserActivity : Layout() {
 
     private fun setViewFromUser(user: User) {
         findViewById<TextView>(R.id.user_name).text = user.firstname + " " + user.lastname
-        //findViewById<TextView>(R.id.description_input).text = user.description
         if (user.picture != null && user.picture != "null" && user.picture != "") {
             RemoteImageLoader.load(this, findViewById(R.id.user_image), user.picture)
         } else {
@@ -47,10 +46,9 @@ class UserActivity : Layout() {
         super.onCreate(savedInstanceState, R.layout.activity_user, true)
         val params: JSONObject = Serializer.unserialize(intent.getStringExtra("params"))
 
-        getUser(params.getInt("id"), { u ->
-            user = u
-            setViewFromUser(u)
-        })
+        getUser(params.getInt("id")) {
+            setViewFromUser(it)
+        }
         setListeners()
     }
 }

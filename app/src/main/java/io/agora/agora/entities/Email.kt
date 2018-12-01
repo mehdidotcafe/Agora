@@ -9,7 +9,7 @@ object Email {
 
         emailIntent.type = "plain/text"
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, arrayOf(email))
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "")
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "[AGORA]")
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "")
 
         packageContext.startActivity(Intent.createChooser(emailIntent, "Send mail..."))

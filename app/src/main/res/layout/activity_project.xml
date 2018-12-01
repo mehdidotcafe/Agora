@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <include
         android:id="@+id/include"
@@ -22,60 +14,80 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
-            <ImageView
-                android:id="@+id/project_image"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/rectangle2"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="152dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+                android:layout_height="256dp">
+
+                <ImageView
+                    android:id="@+id/project_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="257dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
-                android:textStyle="bold"
+                android:fontFamily="@font/lato_bold"
+                android:textColor="#000"
                 android:id="@+id/project_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
                 android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
                 android:paddingRight="16dp"
-                android:textSize="22sp"
+                android:textSize="28sp"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="198dp"
                 tools:layout_editor_absoluteY="164dp" />
 
             <LinearLayout
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/owner_picture"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp" />
 
                 <TextView
+                    android:fontFamily="@font/lato_regular"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="By " />
+                    android:text="@string/by" />
 
                 <TextView
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/colorBlack"
                     android:id="@+id/project_owner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -84,90 +96,148 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/lato_light"
                 android:id="@+id/project_description"
-                android:textSize="18sp"
-                android:paddingTop="32dp"
-                android:paddingLeft="16dp"
-                android:paddingBottom="16dp"
-                android:text=""
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:textSize="22sp"
-                android:text="Collaborators"
-                tools:layout_editor_absoluteX="198dp"
-                tools:layout_editor_absoluteY="164dp" />
-            <ScrollView
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <io.agora.agora.rendering.RoundedCornerLayout
-                    android:layout_margin="4dp"
+                <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:scaleType="fitXY"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-                        app:srcCompat="@drawable/rectangle2" />
-                 </io.agora.agora.rendering.RoundedCornerLayout>
-                <io.agora.agora.rendering.RoundedCornerLayout
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:scaleType="fitXY"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-                        app:srcCompat="@drawable/rectangle2" />
-                </io.agora.agora.rendering.RoundedCornerLayout>
-                <io.agora.agora.rendering.RoundedCornerLayout
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:scaleType="fitXY"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-                        app:srcCompat="@drawable/rectangle2" />
-                </io.agora.agora.rendering.RoundedCornerLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </LinearLayout>
-            </ScrollView>
+                    <ImageView
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_bookmarks_black_24" />
 
-            <LinearLayout
-                android:orientation="horizontal"
+
+                    <TextView
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/tech" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_place_black_24" />
+
+                    <TextView
+                        android:layout_marginEnd="12dp"
+                        android:id="@+id/project_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="" />
+
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:numColumns="3"
+                android:id="@+id/skills_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </LinearLayout>
+            </GridView>
 
-            <Button
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
+            <TextView
+                android:fontFamily="@font/lato_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:background="@layout/form_input_edit_text_background_shape"
-                android:text="@string/join_project"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="369dp" />
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000"
+                android:text="@string/collaborators"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="198dp"
+                tools:layout_editor_absoluteY="164dp" />
+
+            <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:numColumns="3"
+                android:id="@+id/contributors_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 
         </LinearLayout>
     </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/contact_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:rotation="-45"
+        android:src="@drawable/baseline_send_black_36"
+        android:tint="@color/colorWhite"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"  />
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/task_list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorWhite"
+            android:src="@drawable/baseline_view_list_white_18"
+            fab:fab_size="mini"
+            fab:fab_label="@string/note_list" />
+    </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,105 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+
+<android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
-    android:gravity="top"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
 
     <LinearLayout
-        android:orientation="vertical"
-        android:background="@drawable/border_black_background"
-        android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="112dp">
 
             <ImageView
                 android:id="@+id/project_image"
                 android:layout_width="match_parent"
-                android:layout_height="128dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/rectangle2"
+                android:layout_height="112dp"
                 android:contentDescription="project image"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/rectangle2" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="98dp"
+                android:background="@drawable/top_shadow_gradient"
+                app:layout_constraintBottom_toTopOf="@+id/project_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
         </android.support.constraint.ConstraintLayout>
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="#f1f1f1"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="4dp"
-                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/lato_bold"
+                android:textColor="#000"
                 android:id="@+id/project_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text=""
+                android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:id="@+id/project_short_description"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="16dp"
-                        android:id="@+id/project_length"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-                    <TextView
-                        android:textSize="20sp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Peoples" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="16dp"
-                        android:id="@+id/project_delay"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="125" />
-                    <TextView
-                        android:textSize="20sp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Days remaining" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0px"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#353535"
+                android:textSize="14sp" />
         </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:fontFamily="@font/lato_bold"
+                android:textColor="#000"
+                android:textAlignment="viewEnd"
+                android:id="@+id/project_delay"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:id="@+id/project_delay_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/remaining_day_plu"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:fontFamily="@font/lato_bold"
+                android:textColor="#000"
+                android:textAlignment="viewEnd"
+                android:id="@+id/project_length"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:id="@+id/project_length_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/person_plu"
+                android:textSize="14sp" />
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+</android.support.v7.widget.CardView>

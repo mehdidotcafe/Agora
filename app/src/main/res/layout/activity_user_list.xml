@@ -5,32 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserListActivity">
-    <android.support.v7.widget.Toolbar android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        xmlns:android="http://schemas.android.com/apk/res/android" />
 
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/user_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:columnWidth="156dp"
         android:gravity="center"
-        android:numColumns="2"
-        android:stretchMode="spacingWidthUniform"
-        android:verticalSpacing="16dp"
+        android:horizontalSpacing="16dp"
+        android:numColumns="1"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="32dp"
         app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
     </GridView>
 
     <include
         android:id="@+id/include"
         layout="@layout/footer"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/results"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

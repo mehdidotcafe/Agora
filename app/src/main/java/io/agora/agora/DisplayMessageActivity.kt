@@ -11,10 +11,10 @@ class DisplayMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_message)
 
-        val intent: Intent = getIntent()
+        val intent: Intent = intent
         val message: String = intent.getStringExtra("agora.io.MESSAGE")
 
         val textView: TextView = findViewById(R.id.textView)
-        textView.setText(message)
+        textView.text = message
     }
 }

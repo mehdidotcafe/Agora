@@ -8,28 +8,20 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "io.agora.agora"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:design'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -42,5 +34,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.koushikdutta.ion/ion
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation group: 'com.koushikdutta.ion', name: 'ion', version: '2.1.6'
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'com.github.clans:fab:1.6.4'
 
 }

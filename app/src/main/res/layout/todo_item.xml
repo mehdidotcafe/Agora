@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:backgroundTint="@color/colorPrimary"
+    android:background="@drawable/border_bottom"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox
+        android:id="@+id/todo_completed"
+        android:buttonTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/lato_regular"
+        android:textSize="22sp"
+        android:textColor="#000"
+        android:id="@+id/todo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

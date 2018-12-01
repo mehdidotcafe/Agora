@@ -22,14 +22,14 @@ object IntentManager {
 
         if (obj != null)
             setExtrasToIntent(activity, obj)
-        activity.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        activity.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
         packageContext.startActivity(activity)
     }
 
     fun replace(packageContext: Context, cls: Class<*>) {
         val intent = Intent(packageContext, cls)
 
-        intent.flags = FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
         packageContext.startActivity(intent)
         (packageContext as Activity).finish()
     }
